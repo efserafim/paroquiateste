@@ -1,0 +1,60 @@
+#leitura {
+    font-size: 1.1em;
+    line-height: 1.6;
+    color: #333;
+    margin-top: 20px;
+    padding: 15px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease-in-out;
+    white-space: pre-line; /* Para preservar as quebras de linha no conteúdo da leitura */
+}
+
+/* Efeito visual ao passar o mouse sobre a leitura */
+#leitura:hover {
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+    transform: translateY(-4px); /* Efeito de elevação */
+}
+
+/* Títulos dentro da leitura do dia */
+#leitura strong {
+    font-size: 1.2em;
+    color: #2a9df4;
+    margin-bottom: 10px;
+    display: block;
+}
+
+/* Estilizando a leitura para o modo escuro */
+.dark-mode #leitura {
+    background-color: #333;
+    color: #bbb;
+}
+
+.dark-mode #leitura strong {
+    color: #4ab3f4;
+}
+
+#leitura br {
+    margin-bottom: 10px; /* Espaço entre as quebras de linha */
+}
+
+/* Melhorando os parágrafos dentro das leituras */
+#leitura p {
+    margin: 10px 0;
+    font-size: 1.1em;
+    color: #555;
+    line-height: 1.6;
+}
+
+/* Ajuste nos textos de "Não disponível" para dar um destaque */
+#leitura .nao-disponivel {
+    color: #e53935; /* Cor vermelha para indicar que não está disponível */
+    font-weight: bold;
+    font-style: italic;
+}
+
+/* Efeito visual nas tags de "Não disponível" */
+#leitura .nao-disponivel:hover {
+    text-decoration: underline;
+}

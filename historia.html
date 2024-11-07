@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paróquia</title>
+    <link rel="stylesheet" href="styles.css">
+    <script>
+        function applyDarkMode() {
+            const body = document.body;
+            const darkModeEnabled = localStorage.getItem('dark-mode') === 'true';
+            if (darkModeEnabled) {
+                body.classList.add('dark-mode');
+                document.getElementById('mode-icon').innerHTML = '🌙'; // Lua
+                document.getElementById('mode-text').innerText = 'Modo Claro';
+            } else {
+                body.classList.remove('dark-mode');
+                document.getElementById('mode-icon').innerHTML = '☀️'; // Sol
+                document.getElementById('mode-text').innerText = 'Modo Escuro';
+            }
+        }
+
+        function toggleDarkMode() {
+            const body = document.body;
+            const darkModeEnabled = body.classList.toggle('dark-mode');
+            localStorage.setItem('dark-mode', darkModeEnabled);
+            applyDarkMode();
+        }
+
+        window.onload = applyDarkMode;
+    </script>
+</head>
+<body>
+    <header>
+        <div class="mode-toggle">
+            <button onclick="toggleDarkMode()" id="mode-toggle">
+                <span id="mode-icon">☀️</span> 
+            </button>
+        </div>
+        <div class="logo">
+            <img src="./virgem_maria_simbol-removebg-preview (1).png" alt="Brasão" class="brasao">
+            <h1>Paróquia Nossa Senhora de Nazareth</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="horarios.html">Missas</a></li>
+                <li><a href="clero.html">Padres</a></li>
+                <li><a href="eventos.html">Pastorais</a></li>
+                <li><a href="leituras.html">Evangelho</a></li>
+                <li><a href="capelas.html">Capelas</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section>
+            <h2>História de Nossa Senhora de Nazaré</h2>
+            <p>No dia 8 de setembro de 1630, após uma forte tempestade, um pescador de Saquarema saiu para ver as redes que havia deixado ao mar. Como todos os dias, o pescador passou com seu barco próximo a bela colina, hoje um dos grandes cartões postais do estado do Rio de Janeiro, e reparou numa forte luz que saia dentre as pedras.</p>
+            <p>Curioso com aquele estranho brilho, o homem dirigiu-se até o penedo para ver de onde vinha a luz. Foi então que ele lá encontrou uma imagem de Nossa Senhora, que era a fonte de onde a luz emanava.</p>
+            <p>Contente, o pescador levou a imagem para sua casa, onde mais tarde reuniu todos da vila, portugueses e índios, para rezarem diante de sua nova protetora. Comprovando que aquela não era apenas “uma história de pescador”, no dia seguinte a imagem reapareceu sozinha junto às rochas da colina, no mesmo local onde havia sido encontrada. Este prodígio repetiu-se por quatro vezes, certamente para tirar todas as dúvidas de que estavam realmente diante de um milagre.</p>
+            <p>Os Saquaremenses então construíram no morro uma pequena capela para sua Virgem, que passou a ser chamada de Nossa Senhora de Nazaré. No entanto, a fama de milagres que começaram a ocorrer, fez com que devotos viessem de cada vez mais longe.</p>
+            <p>Assim, Saquarema teve a primeira igreja dedicada a Nossa Senhora de Nazaré no Brasil, e o primeiro Círio a ela dedicada; portanto, antes mesmo de Belém – PA (1793) e Nazaré – BA (1636). Atualmente o santuário de Saquarema conta com uma grande igreja construída em 1837 e tem a terceira maior festa do Brasil.</p>
+
+            <div class="image-container">
+                <img src="" alt="Nossa Senhora de Nazaré" class="rounded-image">  
+            </div>
+        </section>
+
+        <footer>
+            <p>&copy; 2024 Paróquia Nossa Senhora. Todos os direitos reservados.</p>
+        </footer>
+
+        <a href="https://wa.me/+5522999696580" class="whatsapp-button" target="_blank" rel="noopener noreferrer">
+            <div class="whatsapp-bubble">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp Logo" class="whatsapp-logo">
+                Secretaria Online
+            </div>
+        </a>
+    </main>
+</body>
+</html>

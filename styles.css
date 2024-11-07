@@ -1,0 +1,537 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f7f9fc;
+    color: #333;
+    overflow-x: hidden;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.dark-mode {
+    background-color: #121212;
+    color: #ffffff;
+}
+
+header {
+    background: linear-gradient(135deg, #4ab3f4, #2a9df4);
+    color: #fff;
+    padding: 15px 0;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    border-bottom-left-radius: 25px;
+    border-bottom-right-radius: 25px;
+    margin-bottom: 20px;
+}
+
+.dark-mode header {
+    background: linear-gradient(135deg, #1e1e1e, #3a3a3a);
+}
+
+.logo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.brasao {
+    width: 65px;
+    height: auto;
+    margin-bottom: 5px;
+}
+
+.logo h1 {
+    margin: 0;
+    font-size: 2em;
+    font-weight: 600;
+    color: #ffffff;
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.7);
+}
+
+.dark-mode .logo h1 {
+    color: #ffffff;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 20px;
+}
+
+nav a {
+    color: #ffffff; /* Texto claro */
+    text-decoration: none;
+    font-weight: 600; /* Peso da fonte mais forte */
+    font-size: 1.1em;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7); /* Sombra para legibilidade */
+    transition: color 0.3s;
+}
+
+nav a:hover {
+    color: #4ab3f4; /* Azul mais claro ao passar o mouse */
+}
+
+.hero {
+    position: relative;
+    height: 400px;
+    overflow: hidden;
+    border-radius: 25px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+    margin-bottom: 20px;
+}
+
+.hero img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.4); /* Overlay mais suave */
+    z-index: 2;
+}
+
+.carousel-caption {
+    position: relative;
+    z-index: 3;
+    text-align: center;
+    color: #fff;
+    padding: 20px;
+}
+
+.carousel-caption h2 {
+    font-size: 2.5em;
+    margin: 0;
+}
+
+.carousel-caption p {
+    font-size: 1.2em;
+    margin: 10px 0;
+}
+
+main {
+    padding: 20px;
+    max-width: 900px;
+    margin: auto;
+    background: rgba(255, 255, 255, 0.95); /* Fundo mais claro */
+    border-radius: 12px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+.dark-mode main {
+    background: rgba(30, 30, 30, 0.95); /* Fundo escuro */
+}
+
+section {
+    margin: 20px 0;
+    padding: 20px;
+    background: rgba(245, 245, 245, 0.9); /* Fundo das seções mais suave */
+    border-radius: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.dark-mode section {
+    background: rgba(50, 50, 50, 0.9); /* Fundo das seções no modo escuro */
+}
+
+section h2 {
+    font-size: 1.8em;
+    margin-bottom: 10px;
+    color: #2a9df4; /* Azul suave */
+}
+
+.dark-mode section h2 {
+    color: #4ab3f4; /* Azul mais claro no modo escuro */
+}
+
+section h3 {
+    font-size: 1.5em;
+    margin: 15px 0;
+    color: #4ab3f4; /* Azul mais claro */
+}
+
+section ul {
+    list-style: none;
+    padding: 0;
+}
+
+section ul li {
+    margin: 10px 0;
+    padding: 10px;
+    border-left: 5px solid #2a9df4; /* Azul suave */
+    background: rgba(255, 255, 255, 0.85); /* Fundo mais claro */
+    transition: background 0.3s, transform 0.3s;
+}
+
+.dark-mode section ul li {
+    background: rgba(70, 70, 70, 0.85); /* Fundo das listas no modo escuro */
+}
+
+section ul li:hover {
+    background: #e0f7fa; /* Fundo suave ao passar o mouse */
+    transform: translateX(5px);
+}
+
+footer {
+    text-align: center;
+    padding: 15px 0;
+    background: rgba(240, 240, 245, 0.9);
+    color: #666;
+    border-top: 1px solid #ddd;
+    font-size: 0.9em;
+}
+
+.dark-mode footer {
+    background: rgba(50, 50, 50, 0.9); /* Fundo do rodapé no modo escuro */
+    color: #bbb; /* Texto claro no rodapé */
+}
+
+.btn {
+    display: inline-block; /* Garante que o botão seja exibido como um bloco */
+    padding: 12px 25px;
+    background-color: #2a9df4; /* Cor do botão */
+    color: #fff; /* Cor do texto */
+    text-decoration: none; /* Remove o sublinhado */
+    border-radius: 30px; /* Bordas arredondadas */
+    font-size: 1.1em;
+    font-weight: 600;
+    margin-top: 20px; /* Espaço acima do botão */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s, transform 0.2s, box-shadow 0.3s;
+    text-align: center; /* Centraliza o texto */
+}
+
+.dark-mode .btn {
+    background-color: #4ab3f4; /* Azul mais claro no modo escuro */
+}
+
+.btn:hover {
+    background-color: #1e8fd6; /* Cor ao passar o mouse */
+    transform: translateY(-4px); /* Efeito de elevação */
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+.carousel-caption .btn {
+    margin-top: 150px;
+}
+
+.whatsapp-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    text-decoration: none;
+    color: #fff;
+    font-size: 1em;
+    font-weight: 600; /* Peso da fonte mais forte */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #25d366; /* Verde WhatsApp */
+    padding: 10px 15px;
+    border-radius: 30px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s, background-color 0.3s;
+    z-index: 1000;
+}
+
+.dark-mode .whatsapp-button {
+    background-color: #1ebe60; /* Verde mais escuro no modo escuro */
+}
+
+.whatsapp-button:hover {
+    transform: scale(1.05);
+    background-color: #1ebe60; /* Verde mais escuro ao passar o mouse */
+}
+
+.whatsapp-bubble {
+    display: flex;
+    align-items: center;
+}
+
+.whatsapp-logo {
+    width: 24px;
+    height: 24px;
+    margin-right: 10px;
+}
+
+/* Estilo para os cards do clero */
+.clero-cards {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.card {
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    width: 300px;
+}
+
+.dark-mode .card {
+    background-color: #2a2a2a; /* Fundo escuro para os cards */
+}
+
+.card-img {
+    height: 200px;
+    overflow: hidden;
+}
+
+.person-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+}
+
+.card-info {
+    padding: 20px;
+    text-align: center;
+}
+
+.card-info h3 {
+    margin-top: 0;
+    margin-bottom: 5px;
+    font-size: 1.5em;
+    color: #2a9df4;
+}
+
+.dark-mode .card-info h3 {
+    color: #4ab3f4; /* Azul mais claro no modo escuro */
+}
+
+.card-info p {
+    margin: 0;
+    font-size: 1.2em;
+    color: #666;
+}
+
+.dark-mode .card-info p {
+    color: #bbb; /* Texto claro no modo escuro */
+}
+
+/* Estilo para os cards de eventos */
+.event-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.event-card {
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    width: 300px;
+}
+
+.dark-mode .event-card {
+    background-color: #2a2a2a; /* Fundo escuro para os cards de eventos */
+}
+
+.event-image {
+    height: 200px;
+    overflow: hidden;
+}
+
+.event-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.event-info {
+    padding: 20px;
+}
+
+.event-info h3 {
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-size: 1.5em;
+    color: #2a9df4;
+}
+
+.dark-mode .event-info h3 {
+    color: #4ab3f4; /* Azul mais claro no modo escuro */
+}
+
+.event-info p {
+    margin: 10px 0;
+    font-size: 1.1em;
+    color: #666;
+}
+
+.dark-mode .event-info p {
+    color: #bbb; /* Texto claro no modo escuro */
+}
+
+.mode-toggle {
+    position: absolute;
+    left: 20px; /* Distância da borda esquerda */
+    top: 15px; /* Distância do topo */
+}
+
+#mode-toggle {
+    background-color: #4ab3f4; /* Cor de fundo padrão */
+    border: none;
+    color: #fff;
+    font-size: 1em;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    padding: 10px 15px;
+    border-radius: 25px; /* Bordas arredondadas */
+    transition: background-color 0.3s, transform 0.3s; /* Transição suave */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra do botão */
+}
+
+#mode-toggle:hover {
+    background-color: #1e8fd6; /* Cor de fundo ao passar o mouse */
+    transform: translateY(-2px); /* Efeito de elevação */
+}
+
+#mode-toggle span {
+    margin-right: 5px; /* Espaço entre o ícone e o texto */
+    transition: transform 0.3s; /* Transição suave para o ícone */
+}
+
+.social-button {
+    display: inline-flex;
+    align-items: center;
+    background-color: #e1306c; /* Cor do Instagram */
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 15px;
+    border-radius: 25px;
+    margin-left: 20px; /* Espaço entre o logo e o botão */
+    transition: background-color 0.3s;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.social-button:hover {
+    background-color: #c13584; /* Cor mais escura ao passar o mouse */
+}
+
+.social-button img {
+    width: 20px; /* Tamanho do ícone do Instagram */
+    height: auto;
+    margin-right: 8px; /* Espaço entre o ícone e o texto */
+}
+
+
+/* Media Queries para responsividade */
+@media (max-width: 768px) {
+    .logo h1 {
+        font-size: 1.5em; /* Tamanho da fonte reduzido em telas menores */
+    }
+
+    nav ul li {
+        margin: 0 10px; /* Reduzir margens em telas menores */
+    }
+
+    nav a {
+        font-size: 1em; /* Tamanho da fonte reduzido em telas menores */
+    }
+
+    .hero {
+        height: 250px; /* Altura reduzida para telas menores */
+    }
+
+    .carousel-caption h2 {
+        font-size: 1.8em; /* Tamanho da fonte reduzido em telas menores */
+    }
+
+    .carousel-caption p {
+        font-size: 1em; /* Tamanho da fonte reduzido em telas menores */
+    }
+
+    .btn {
+         width: 100%; /* Botão ocupa toda a largura em dispositivos móveis */
+         margin-top: 15px; /* Ajusta o espaço acima do botão */
+    }
+
+    .carousel-caption .btn {
+        margin-top: 100px; /* Ajuste do espaçamento para telas menores */
+        width: auto; /* Evita que o botão ocupe toda a largura */
+        padding: 12px 25px; /* Mantém o tamanho do botão adequado */
+        font-size: 1.1em; /* Ajusta o tamanho da fonte */
+        text-align: center; /* Garante que o texto do botão esteja centralizado */
+    }
+
+    main {
+        padding: 10px; /* Reduzir padding em telas menores */
+    }
+
+    section {
+        padding: 15px; /* Reduzir padding em seções em telas menores */
+    }
+
+    footer {
+        font-size: 0.8em; /* Tamanho da fonte reduzido em telas menores */
+    }
+
+    .btn {
+        font-size: 1em; /* Tamanho da fonte reduzido em botões em telas menores */
+    }
+
+    .clero-cards {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .card {
+        width: 100%;
+        max-width: 400px;
+    }
+
+    .event-card {
+        width: 100%;
+        max-width: 400px;
+    }
+}
+
+@media (max-width: 480px) {
+    .logo h1 {
+        font-size: 1.2em; /* Tamanho ainda mais reduzido */
+    }
+
+    .hero {
+        height: 200px; /* Altura ainda menor para telas muito pequenas */
+    }
+
+    .carousel-caption h2 {
+        font-size: 1.5em; /* Tamanho da fonte reduzido */
+    }
+
+    .carousel-caption p {
+        font-size: 0.9em; /* Tamanho da fonte reduzido */
+    }
+
+    .carousel-caption .btn {
+        margin-top: 80px; /* Ajusta o espaçamento para telas muito pequenas */
+        width: auto; /* Evita que o botão ocupe toda a largura */
+        padding: 12px 20px; /* Ajuste no padding */
+        font-size: 1em; /* Reduz o tamanho da fonte para telas menores */
+    }
+}

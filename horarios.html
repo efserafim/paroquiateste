@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Horários das Missas</title>
+    <link rel="stylesheet" href="styles.css">
+    <script>
+        function applyDarkMode() {
+            const body = document.body;
+            const darkModeEnabled = localStorage.getItem('dark-mode') === 'true';
+            if (darkModeEnabled) {
+                body.classList.add('dark-mode');
+                document.getElementById('mode-icon').innerHTML = '🌙'; // Lua
+                document.getElementById('mode-text').innerText = 'Modo Claro';
+            } else {
+                body.classList.remove('dark-mode');
+                document.getElementById('mode-icon').innerHTML = '☀️'; // Sol
+                document.getElementById('mode-text').innerText = 'Modo Escuro';
+            }
+        }
+
+        function toggleDarkMode() {
+            const body = document.body;
+            const darkModeEnabled = body.classList.toggle('dark-mode');
+            localStorage.setItem('dark-mode', darkModeEnabled);
+            applyDarkMode();
+        }
+
+        window.onload = applyDarkMode;
+    </script>
+</head>
+<body>
+    <header>
+        <div class="mode-toggle">
+            <button onclick="toggleDarkMode()" id="mode-toggle">
+                <span id="mode-icon">☀️</span> 
+            </button>
+        </div>
+        <div class="logo">
+            <img src="./virgem_maria_simbol-removebg-preview (1).png" alt="Brasão" class="brasao">
+            <h1>Paróquia Nossa Senhora de Nazareth</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="horarios.html">Missas</a></li>
+                <li><a href="clero.html">Padres</a></li>
+                <li><a href="eventos.html">Pastorais</a></li>
+                <li><a href="leituras.html">Evangelho</a></li>
+                <li><a href="capelas.html">Capelas</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section id="horarios">
+            <h2>Horários das Missas</h2>
+            <h3>Escalas de Novembro de 2024</h3>
+            <ul>
+                <li><strong>Sexta-feira, 01/11/24</strong>
+                    <ul>
+                        <li>8h - Capela de Nossa Sra. da Conceição (Sampaio Corrêa)</li>
+                        <li>10h - Capela de São Lourenço (Jaconé)</li>
+                        <li>18h - Capela de São João Batista (Centro)</li>
+                    </ul>
+                </li>
+                <li><strong>Sábado, 02/11/24 - FINADOS</strong>
+                    <ul>
+                        <li>9h - Matriz de Nossa Sra. de Nazareth (Centro)</li>
+                        <li>9h - Capela de Nossa Sra. da Conceição (Sampaio Corrêa)</li>
+                        <li>19h - Igreja Matriz N. Sra. de Nazareth (Centro)</li>
+                        <li>19h - Capela de São Sebastião (Boqueirão)</li>
+                    </ul>
+                </li>
+                <li><strong>Domingo, 03/11/24</strong>
+                    <ul>
+                        <li>07h - Capela São Lourenço (Jaconé)</li>
+                        <li>07h - Capela de São João Batista (Centro)</li>
+                        <li>08h30 - Capela N. Sra. da Conceição (Sampaio Corrêa)</li>
+                        <li>09h - Igreja São José (Itaúna)</li>
+                        <li>11h - Matriz N. Sra. de Nazareth (Vila/Centro)</li>
+                        <li>19h - Igreja São José (Itaúna)</li>
+                    </ul>
+                </li>
+                <li><strong>Terça-feira, 05/11/24</strong>
+                    <ul>
+                        <li>19h - Capela de São Pedro (Jaconé)</li>
+                    </ul>
+                </li>
+                <li><strong>Quarta-feira, 06/11/24</strong>
+                    <ul>
+                        <li>8h - Capela do Instituto Madre Maria das Neves (Centro)</li>
+                    </ul>
+                </li>
+                <li><strong>Quinta-feira, 07/11/24</strong>
+                    <ul>
+                        <li>19h - Capela de São João Batista (Centro)</li>
+                        <li>19h - Capela de São Lourenço (Jaconé)</li>
+                    </ul>
+                </li>
+                <li><strong>Sexta-feira, 08/11/24</strong>
+                    <ul>
+                        <li>8h - Capela do Instituto Madre Maria das Neves (Centro)</li>
+                    </ul>
+                </li>
+                <li><strong>Sábado, 09/11/24</strong>
+                    <ul>
+                        <li>16h30 - Capela de São Pedro</li>
+                        <li>17h - Capela de Nossa Sra. da Saúde (Boqueirão)</li>
+                        <li>19h - Matriz de Nossa Sra. de Nazareth (Centro)</li>
+                        <li>19h - Capela de São Judas Tadeu (Jardim)</li>
+                    </ul>
+                </li>
+                <li><strong>Domingo, 10/11/24</strong>
+                    <ul>
+                        <li>07h - Capela São Lourenço (Jaconé)</li>
+                        <li>07h - Capela de São João Batista (Centro)</li>
+                        <li>08h30 - Capela N. Sra. da Conceição (Sampaio Corrêa)</li>
+                        <li>09h - Igreja São José (Itaúna)</li>
+                        <li>11h - Matriz N. Sra. de Nazareth (Vila/Centro)</li>
+                        <li>19h - Igreja São José (Itaúna)</li>
+                    </ul>
+                </li>
+                <li><strong>Terça-feira, 12/11/24</strong>
+                    <ul>
+                        <li>19h - Capela de São Sebastião (Boqueirão)</li>
+                    </ul>
+                </li>
+                <li><strong>Quarta-feira, 13/11/24</strong>
+                    <ul>
+                        <li>8h - Capela do Instituto Madre Maria das Neves (Centro)</li>
+                    </ul>
+                </li>
+                <li><strong>Quinta-feira, 14/11/24</strong>
+                    <ul>
+                        <li>18h - Capela de São João Batista (Centro)</li>
+                    </ul>
+                </li>
+                <li><strong>Sexta-feira, 15/11/24</strong>
+                    <ul>
+                        <li>8h - Capela do Instituto Madre Maria das Neves (Centro)</li>
+                    </ul>
+                </li>
+                <li><strong>Sábado, 16/11/24</strong>
+                    <ul>
+                        <li>17h - Capela de Santa Edwiges (Barra Nova)</li>
+                        <li>19h - Igreja Matriz de N.Sra de Nazareth (Centro)</li>
+                    </ul>
+                </li>
+                <li><strong>Domingo, 17/11/24</strong>
+                    <ul>
+                        <li>07h - Capela São Lourenço (Jaconé)</li>
+                        <li>07h - Capela de São João Batista (Centro)</li>
+                        <li>08h30 - Capela N. Sra. da Conceição (Sampaio Corrêa)</li>
+                        <li>09h - Igreja São José (Itaúna)</li>
+                        <li>11h - Matriz N. Sra. de Nazareth (Vila/Centro)</li>
+                        <li>19h - Igreja São José (Itaúna)</li>
+                    </ul>
+                </li>
+                <li><strong>Terça-feira, 19/11/24</strong>
+                    <ul>
+                        <li>19h - Capela de São Judas Tadeu (Jardim)</li>
+                    </ul>
+                </li>
+                <li><strong>Quarta-feira, 20/11/24</strong>
+                    <ul>
+                        <li>8h - Capela do Instituto Madre Maria das Neves (Centro)</li>
+                    </ul>
+                </li>
+                <li><strong>Quinta-feira, 21/11/24</strong>
+                    <ul>
+                        <li>19h30 - Capela de Nossa Sra. da Saúde (Boqueirão)</li>
+                    </ul>
+                </li>
+                <li><strong>Sexta-feira, 22/11/24</strong>
+                    <ul>
+                        <li>8h - Capela do Instituto Madre Maria das Neves (Centro)</li>
+                    </ul>
+                </li>
+                <li><strong>Sábado, 23/11/24</strong>
+                    <ul>
+                        <li>16h30 - Capela de São João (Tinguí)</li>
+                        <li>19h - Igreja Matriz de N.Sra de Nazareth (Centro)</li>
+                    </ul>
+                </li>
+                <li><strong>Domingo, 24/11/24</strong>
+                    <ul>
+                        <li>07h - Capela São Lourenço (Jaconé)</li>
+                        <li>07h - Capela de São João Batista (Centro)</li>
+                        <li>08h30 - Capela N. Sra. da Conceição (Sampaio Corrêa)</li>
+                        <li>09h - Igreja São José (Itaúna)</li>
+                        <li>11h - Matriz N. Sra. de Nazareth (Vila/Centro)</li>
+                        <li>19h - Igreja São José (Itaúna)</li>
+                    </ul>
+                </li>
+                <li><strong>Terça-feira, 26/11/24</strong>
+                    <ul>
+                        <li>19h - Capela de São Judas Tadeu (Jardim)</li>
+                    </ul>
+                </li>
+                <li><strong>Quarta-feira, 27/11/24</strong>
+                    <ul>
+                        <li>8h - Capela do Instituto Madre Maria das Neves (Centro)</li>
+                    </ul>
+                </li>
+                <li><strong>Quinta-feira, 28/11/24</strong>
+                    <ul>
+                        <li>18h - Capela de São João Batista (Centro)</li>
+                    </ul>
+                </li>
+                <li><strong>Sexta-feira, 29/11/24</strong>
+                    <ul>
+                        <li>8h - Capela do Instituto Madre Maria das Neves (Centro)</li>
+                    </ul>
+                </li>
+                <li><strong>Sábado, 30/11/24</strong>
+                    <ul>
+                        <li>16h30 - Capela de Santa Teresinha (Serra)</li>
+                        <li>19h - Igreja Matriz de N.Sra de Nazareth (Centro)</li>
+                    </ul>
+                </li>
+            </ul>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2023 Paróquia Nossa Senhora de Nazareth. Todos os direitos reservados.</p>
+    </footer>
+    <a href="https://wa.me/+5522999696580" class="whatsapp-button" target="_blank" rel="noopener noreferrer">
+        <div class="whatsapp-bubble">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp Logo" class="whatsapp-logo">
+            Secretaria Online
+        </div>
+    </a>
+</body>
+</html>

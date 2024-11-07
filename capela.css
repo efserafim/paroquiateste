@@ -1,0 +1,66 @@
+.capela-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.capela-card {
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    width: 300px;
+    transition: transform 0.3s;
+}
+
+.dark-mode .capela-card {
+    background-color: #2a2a2a; /* Fundo escuro para os cards */
+}
+
+.capela-card:hover {
+    transform: translateY(-5px);
+}
+
+.capela-img {
+    height: 200px;
+    overflow: hidden;
+}
+
+.capela-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.capela-info {
+    padding: 20px;
+    text-align: center;
+}
+
+.capela-info h3 {
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-size: 1.5em;
+    color: #2a9df4;
+}
+
+.dark-mode .capela-info h3 {
+    color: #4ab3f4; /* Azul mais claro no modo escuro */
+}
+
+.capela-info p {
+    margin: 10px 0;
+    font-size: 1.1em;
+    color: #666;
+}
+
+.dark-mode .capela-info p {
+    color: #bbb; /* Texto claro no modo escuro */
+}
+
+.capela-info .btn {
+    margin-top: 15px;
+    text-align: center;
+    width: auto;
+}

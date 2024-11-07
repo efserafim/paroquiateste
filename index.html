@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paróquia</title>
+    <link rel="stylesheet" href="styles.css">
+    <script>
+        function applyDarkMode() {
+            const body = document.body;
+            const darkModeEnabled = localStorage.getItem('dark-mode') === 'true';
+            if (darkModeEnabled) {
+                body.classList.add('dark-mode');
+                document.getElementById('mode-icon').innerHTML = '🌙'; // Lua
+                document.getElementById('mode-text').innerText = 'Modo Claro';
+            } else {
+                body.classList.remove('dark-mode');
+                document.getElementById('mode-icon').innerHTML = '☀️'; // Sol
+                document.getElementById('mode-text').innerText = 'Modo Escuro';
+            }
+        }
+
+        function toggleDarkMode() {
+            const body = document.body;
+            const darkModeEnabled = body.classList.toggle('dark-mode');
+            localStorage.setItem('dark-mode', darkModeEnabled);
+            applyDarkMode();
+        }
+
+        window.onload = applyDarkMode;
+    </script>
+</head>
+<body>
+    <header>
+        <div class="mode-toggle">
+            <button onclick="toggleDarkMode()" id="mode-toggle">
+                <span id="mode-icon">☀️</span> 
+            </button>
+        </div>
+        <div class="logo">
+            <img src="./virgem_maria_simbol-removebg-preview (1).png" alt="Brasão" class="brasao">
+            <h1>Paróquia Nossa Senhora de Nazareth</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="horarios.html">Missas</a></li>
+                <li><a href="clero.html">Padres</a></li>
+                <li><a href="eventos.html">Pastorais</a></li>
+                <li><a href="leituras.html">Evangelho</a></li>
+                <li><a href="capelas.html">Capelas</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <img src="./306663683_5560811757313550_4126079003889847889_n.png" alt="Imagem da Paróquia">
+            <div class="overlay"></div>
+            <div class="carousel-caption">
+                <h2>Bem-vindo à nossa Paróquia!</h2>
+                <p>Conheça mais sobre a história de nossa comunidade!</p>
+                <a href="./historia.html" class="btn">Saiba Mais</a>
+            </div>
+        </section>
+
+        <footer>
+            <p>&copy; 2024 Paróquia Nossa Senhora. Todos os direitos reservados.</p>
+        </footer>
+
+        <a href="https://wa.me/+5522999696580" class="whatsapp-button" target="_blank" rel="noopener noreferrer">
+            <div class="whatsapp-bubble">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp Logo" class="whatsapp-logo">
+                Secretaria Online
+            </div>
+        </a>
+    </main>
+</body>
+</html>
