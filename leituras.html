@@ -33,74 +33,61 @@
 
         window.onload = applyDarkMode;
 
-        // Substitua 'YOUR_API_KEY' pela sua chave de API do cors-anywhere
-        const apiUrl = 'https://cors-anywhere.herokuapp.com/https://api-liturgia-diaria.vercel.app/';
+        const apiUrl = 'https://liturgia.up.railway.app/';
         
         const headers = {
             'X-Requested-With': 'XMLHttpRequest',
-            // Adicione a chave de API aqui, se necessário
-            // 'Authorization': 'Bearer YOUR_API_KEY'
         };
 
         async function fetchLeituraDoDia() {
-            try {
-                console.log('Tentando buscar a leitura do dia...');
-                const response = await fetch(apiUrl, {
-                    method: 'GET',
-                    headers: headers
-                });
+    try {
+        console.log('Tentando buscar a leitura do dia...');
+        const response = await fetch(apiUrl, {
+            method: 'GET',
+            headers: headers
+        });
 
-                console.log('Resposta da API:', response);
+        // Verifique a resposta da API no console
+        const data = await response.json();
+        console.log('Resposta da API:', data); // Aqui você verá a estrutura real dos dados
 
-                if (!response.ok) {
-                    console.error('Erro na resposta da API:', response.statusText);
-                    throw new Error('Erro na resposta da API: ' + response.statusText);
-                }
-
-                const data = await response.json();
-                console.log('Dados recebidos da API:', data); // Exibe os dados retornados pela API
-
-                const today = data.today;
-
-                // Extrair dados e ajustar o acesso às propriedades
-                const { date = "Não disponível", color = "Não disponível", entry_title = "Não disponível", readings = {} } = today;
-
-                let content = `<strong>Data:</strong> ${date}<br>`;
-                content += `<strong>Cor Litúrgica:</strong> ${color}<br>`;
-                content += `<strong>Semana:</strong> ${entry_title}<br><br>`;
-
-                // Primeira Leitura
-                content += `<strong>Primeira Leitura:</strong> ${readings.first_reading?.head || "Não disponível"}<br>`;
-                content += `<br>`; // Adiciona um espaço entre o título e o texto
-                content += `${readings.first_reading?.text || "Não disponível"}<br>`;
-                content += `<strong>R:</strong> ${readings.first_reading?.footer || ""}<br>`;
-
-
-               // Salmo
-                content += `<strong>Salmo:</strong> ${readings.psalm?.response || "Não disponível"}<br>`;
-                if (readings.psalm?.content_psalm) {
-                readings.psalm.content_psalm.forEach((estrofe) => {
-                    content += `<br>`; // Adiciona um espaço entre o título e o texto
-                    content += `&#8212; ${estrofe}<br>`; // Coloca o travessão antes de cada estrofe
-                });
-                } else {
-                content += "Não disponível<br>";
-                }
-
-
-                // Evangelho
-                content += `<strong>Evangelho:</strong> ${readings.gospel?.head_response || "Não disponível"}<br>`;
-                content += `${readings.gospel?.text || "Não disponível"}<br>`;
-                content += `<strong>R:</strong> ${readings.gospel?.footer_response || ""}<br>`;
-
-                // Exibir no elemento HTML
-                document.getElementById("leitura").innerHTML = content;
-
-            } catch (error) {
-                console.error("Erro ao carregar a leitura do dia:", error);
-                document.getElementById("leitura").textContent = "Não foi possível carregar a leitura de hoje. Verifique sua conexão e tente novamente.";
-            }
+        // Verifique se os campos estão presentes
+        if (!data || !data.data || !data.liturgia || !data.cor) {
+            console.error('Campos esperados não encontrados na resposta da API');
+            document.getElementById("leitura").textContent = "Não foi possível carregar a leitura de hoje. A resposta da API não contém os dados esperados.";
+            return;
         }
+
+        // Acesse os dados diretamente conforme a resposta da API
+        const { data: date, liturgia: entryTitle, cor: color, evangelho, primeiraLeitura, salmo, segundaLeitura } = data;
+
+        let content = `<strong>Data:</strong> ${date || "Não disponível"}<br>`;
+        content += `<strong>Cor Litúrgica:</strong> ${color || "Não disponível"}<br>`;
+        content += `<strong>Liturgia:</strong> ${entryTitle || "Não disponível"}<br><br>`;
+
+        // Primeira Leitura
+        content += `<strong>Primeira Leitura:</strong> ${primeiraLeitura?.referencia || "Não disponível"}<br>`;
+        content += `${primeiraLeitura?.texto || "Não disponível"}<br><br>`;
+
+        // Salmo
+        content += `<strong>Salmo:</strong> ${salmo?.refrao || "Não disponível"}<br>`;
+        content += `${salmo?.texto || "Não disponível"}<br><br>`;
+
+        // Segunda Leitura (se existir)
+        content += `<strong>Segunda Leitura:</strong> ${segundaLeitura || "Não disponível"}<br><br>`;
+
+        // Evangelho
+        content += `<strong>Evangelho:</strong> ${evangelho?.referencia || "Não disponível"}<br>`;
+        content += `${evangelho?.texto || "Não disponível"}<br><br>`;
+
+        // Exibir o conteúdo no elemento HTML
+        document.getElementById("leitura").innerHTML = content;
+
+    } catch (error) {
+        console.error("Erro ao carregar a leitura do dia:", error);
+        document.getElementById("leitura").textContent = "Não foi possível carregar a leitura de hoje. Verifique sua conexão e tente novamente.";
+    }
+}
 
         document.addEventListener("DOMContentLoaded", fetchLeituraDoDia);
     </script>
@@ -111,7 +98,6 @@
             <button onclick="toggleDarkMode()" id="mode-toggle">
                 <span id="mode-icon">☀️</span> 
             </button>
-            
         </div>
         <div class="logo">
             <img src="./mariano-removebg-preview.png" alt="Brasão" class="brasao">
