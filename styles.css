@@ -10,6 +10,7 @@ body {
     transition: background-color 0.3s, color 0.3s;
 }
 
+
 .dark-mode {
     background-color: #121212;
     color: #ffffff;
@@ -30,12 +31,14 @@ header {
     background: linear-gradient(135deg, #1e1e1e, #3a3a3a);
 }
 
-.logo {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    margin-bottom: 10px;
+.logo h1 {
+    margin: 0;
+    font-size: 2.5em;
+    font-weight: 600;
+    color: #ffffff;
+    text-transform: uppercase; /* Maiúsculas para maior impacto */
+    letter-spacing: 2px; /* Maior espaçamento entre letras */
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.7); /* Efeito de sombra mais forte */
 }
 
 .brasao {
@@ -70,14 +73,17 @@ nav ul li {
 nav a {
     color: #ffffff; /* Texto claro */
     text-decoration: none;
-    font-weight: 600; /* Peso da fonte mais forte */
-    font-size: 1.1em;
-    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7); /* Sombra para legibilidade */
-    transition: color 0.3s;
+    font-weight: 600;
+    font-size: 1.2em;
+    text-transform: capitalize; /* Primeira letra maiúscula */
+    letter-spacing: 1px; /* Espaçamento sutil entre letras */
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7); /* Efeito de sombra sutil */
+    transition: color 0.3s, transform 0.3s;
 }
 
 nav a:hover {
     color: #4ab3f4; /* Azul mais claro ao passar o mouse */
+    transform: translateY(-3px); /* Efeito de elevação ao passar o mouse */
 }
 
 .hero {
@@ -118,6 +124,7 @@ nav a:hover {
 }
 
 .carousel-caption h2 {
+    text-align: center;
     font-size: 2.5em;
     margin: 0;
 }
@@ -126,6 +133,14 @@ nav a:hover {
     font-size: 1.2em;
     margin: 10px 0;
 }
+
+section h2, .carousel-caption h2 {
+    text-align: center;
+    margin: 0 auto; /* Garantir que o texto ocupe o espaço central */
+    display: block; /* Garante que o elemento seja tratado como bloco */
+    width: fit-content; /* Ajusta a largura para o conteúdo */
+}
+
 
 main {
     padding: 20px;
@@ -153,9 +168,13 @@ section {
 }
 
 section h2 {
-    font-size: 1.8em;
+    font-size: 2em;
     margin-bottom: 10px;
-    color: #2a9df4; /* Azul suave */
+    color: #2a9df4;
+    text-transform: capitalize;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5); /* Sombra mais forte */
 }
 
 .dark-mode section h2 {
@@ -163,9 +182,12 @@ section h2 {
 }
 
 section h3 {
-    font-size: 1.5em;
+    font-size: 1.6em;
     margin: 15px 0;
-    color: #4ab3f4; /* Azul mais claro */
+    color: #4ab3f4;
+    text-transform: capitalize;
+    font-weight: 500;
+    letter-spacing: 1px;
 }
 
 section ul {
@@ -197,26 +219,28 @@ footer {
     color: #666;
     border-top: 1px solid #ddd;
     font-size: 0.9em;
+    letter-spacing: 0.5px;
 }
 
 .dark-mode footer {
-    background: rgba(50, 50, 50, 0.9); /* Fundo do rodapé no modo escuro */
-    color: #bbb; /* Texto claro no rodapé */
+    background: rgba(50, 50, 50, 0.9);
+    color: #bbb;
 }
 
 .btn {
-    display: inline-block; /* Garante que o botão seja exibido como um bloco */
+    display: inline-block;
     padding: 12px 25px;
-    background-color: #2a9df4; /* Cor do botão */
-    color: #fff; /* Cor do texto */
-    text-decoration: none; /* Remove o sublinhado */
-    border-radius: 30px; /* Bordas arredondadas */
-    font-size: 1.1em;
+    background-color: #2a9df4;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 30px;
+    font-size: 1.2em;
     font-weight: 600;
-    margin-top: 20px; /* Espaço acima do botão */
+    margin-top: 20px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     transition: background-color 0.3s, transform 0.2s, box-shadow 0.3s;
-    text-align: center; /* Centraliza o texto */
+    text-align: center;
+    letter-spacing: 1px;
 }
 
 .dark-mode .btn {
@@ -224,8 +248,8 @@ footer {
 }
 
 .btn:hover {
-    background-color: #1e8fd6; /* Cor ao passar o mouse */
-    transform: translateY(-4px); /* Efeito de elevação */
+    background-color: #1e8fd6;
+    transform: translateY(-4px);
     box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
 }
 
