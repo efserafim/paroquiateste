@@ -441,7 +441,7 @@ footer {
 
 
 /* Media Queries para responsividade */
-@media (max-width: 768px) {
+@media (max-width: 400px) {
     .logo h1 {
         font-size: 1.5em; /* Tamanho da fonte reduzido em telas menores */
     }

@@ -9,15 +9,18 @@
     <script>
         function applyDarkMode() {
             const body = document.body;
+            const modeText = document.getElementById('mode-text');
+            if (!modeText) return; // Evita erros se o elemento não existir
+
             const darkModeEnabled = localStorage.getItem('dark-mode') === 'true';
             if (darkModeEnabled) {
                 body.classList.add('dark-mode');
                 document.getElementById('mode-icon').innerHTML = '🌙'; // Lua
-                document.getElementById('mode-text').innerText = 'Modo Claro';
+                modeText.innerText = 'Modo Claro';
             } else {
                 body.classList.remove('dark-mode');
                 document.getElementById('mode-icon').innerHTML = '☀️'; // Sol
-                document.getElementById('mode-text').innerText = 'Modo Escuro';
+                modeText.innerText = 'Modo Escuro';
             }
         }
 
@@ -30,23 +33,32 @@
 
         window.onload = applyDarkMode;
 
+        // Substitua 'YOUR_API_KEY' pela sua chave de API do cors-anywhere
         const apiUrl = 'https://cors-anywhere.herokuapp.com/https://api-liturgia-diaria.vercel.app/';
+        
+        const headers = {
+            'X-Requested-With': 'XMLHttpRequest',
+            // Adicione a chave de API aqui, se necessário
+            // 'Authorization': 'Bearer YOUR_API_KEY'
+        };
 
         async function fetchLeituraDoDia() {
             try {
+                console.log('Tentando buscar a leitura do dia...');
                 const response = await fetch(apiUrl, {
                     method: 'GET',
-                    headers: {
-                        'X-Requested-With': 'XMLHttpRequest'
-                    }
+                    headers: headers
                 });
 
+                console.log('Resposta da API:', response);
+
                 if (!response.ok) {
-                    throw new Error('Network response was not ok ' + response.statusText);
+                    console.error('Erro na resposta da API:', response.statusText);
+                    throw new Error('Erro na resposta da API: ' + response.statusText);
                 }
 
                 const data = await response.json();
-                console.log('Resposta completa da API:', data);
+                console.log('Dados recebidos da API:', data); // Exibe os dados retornados pela API
 
                 const today = data.today;
 
@@ -55,16 +67,26 @@
 
                 let content = `<strong>Data:</strong> ${date}<br>`;
                 content += `<strong>Cor Litúrgica:</strong> ${color}<br>`;
-                content += `<strong>Título da Entrada:</strong> ${entry_title}<br><br>`;
+                content += `<strong>Semana:</strong> ${entry_title}<br><br>`;
 
                 // Primeira Leitura
                 content += `<strong>Primeira Leitura:</strong> ${readings.first_reading?.head || "Não disponível"}<br>`;
+                content += `<br>`; // Adiciona um espaço entre o título e o texto
                 content += `${readings.first_reading?.text || "Não disponível"}<br>`;
                 content += `<strong>R:</strong> ${readings.first_reading?.footer || ""}<br>`;
 
-                // Salmo
+
+               // Salmo
                 content += `<strong>Salmo:</strong> ${readings.psalm?.response || "Não disponível"}<br>`;
-                content += `${readings.psalm?.content_psalm.join('<br>') || "Não disponível"}<br>`;
+                if (readings.psalm?.content_psalm) {
+                readings.psalm.content_psalm.forEach((estrofe) => {
+                    content += `<br>`; // Adiciona um espaço entre o título e o texto
+                    content += `&#8212; ${estrofe}<br>`; // Coloca o travessão antes de cada estrofe
+                });
+                } else {
+                content += "Não disponível<br>";
+                }
+
 
                 // Evangelho
                 content += `<strong>Evangelho:</strong> ${readings.gospel?.head_response || "Não disponível"}<br>`;
@@ -76,7 +98,7 @@
 
             } catch (error) {
                 console.error("Erro ao carregar a leitura do dia:", error);
-                document.getElementById("leitura").textContent = "Não foi possível carregar a leitura de hoje.";
+                document.getElementById("leitura").textContent = "Não foi possível carregar a leitura de hoje. Verifique sua conexão e tente novamente.";
             }
         }
 
@@ -89,14 +111,16 @@
             <button onclick="toggleDarkMode()" id="mode-toggle">
                 <span id="mode-icon">☀️</span> 
             </button>
+            
         </div>
         <div class="logo">
             <img src="./virgem_maria_simbol-removebg-preview (1).png" alt="Brasão" class="brasao">
-            <h1>Liturgia Diária</h1>
+            <h1>Paróquia Nossa Senhora de Nazareth</h1>
         </div>
         <nav>
             <ul>
                 <li><a href="index.html">Inicio</a></li>
+                <li><a href="historia.html">História</a></li>
                 <li><a href="horarios.html">Missas</a></li>
                 <li><a href="clero.html">Padres</a></li>
                 <li><a href="eventos.html">Pastorais</a></li>
