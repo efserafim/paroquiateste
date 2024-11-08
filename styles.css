@@ -19,7 +19,7 @@ body {
 header {
     background: linear-gradient(135deg, #4ab3f4, #2a9df4);
     color: #fff;
-    padding: 15px 0;
+    padding: 30px 0; /* Aumenta o padding para dar mais espaço vertical */
     text-align: center;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
     border-bottom-left-radius: 25px;
@@ -36,9 +36,10 @@ header {
     font-size: 2.5em;
     font-weight: 600;
     color: #ffffff;
-    text-transform: uppercase; /* Maiúsculas para maior impacto */
-    letter-spacing: 2px; /* Maior espaçamento entre letras */
-    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.7); /* Efeito de sombra mais forte */
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.7);
+    margin-bottom: 15px; /* Adiciona um espaçamento abaixo do logo */
 }
 
 .brasao {
@@ -59,6 +60,10 @@ header {
     color: #ffffff;
 }
 
+nav {
+    padding-top: 15px; /* Adiciona mais espaço acima da navegação */
+}
+
 nav ul {
     list-style: none;
     padding: 0;
@@ -67,23 +72,24 @@ nav ul {
 
 nav ul li {
     display: inline;
-    margin: 0 20px;
+    margin: 0 25px; /* Aumenta o espaço entre os itens de navegação */
 }
 
 nav a {
-    color: #ffffff; /* Texto claro */
+    color: #ffffff;
     text-decoration: none;
     font-weight: 600;
     font-size: 1.2em;
-    text-transform: capitalize; /* Primeira letra maiúscula */
-    letter-spacing: 1px; /* Espaçamento sutil entre letras */
-    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7); /* Efeito de sombra sutil */
+    text-transform: capitalize;
+    letter-spacing: 1px;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
     transition: color 0.3s, transform 0.3s;
 }
 
+
 nav a:hover {
-    color: #4ab3f4; /* Azul mais claro ao passar o mouse */
-    transform: translateY(-3px); /* Efeito de elevação ao passar o mouse */
+    color: #4ab3f4;
+    transform: translateY(-3px);
 }
 
 .hero {
