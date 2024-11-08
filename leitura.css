@@ -58,3 +58,9 @@
 #leitura .nao-disponivel:hover {
     text-decoration: underline;
 }
+
+/* Adiciona um fundo escuro global no modo escuro */
+.dark-mode {
+    background-color: #121212;  /* Cor de fundo escura para toda a página */
+    color: #f1f1f1;  /* Cor de texto clara no modo escuro */
+}

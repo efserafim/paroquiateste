@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Paróquia</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="index-cards.css">
     <script>
         function applyDarkMode() {
             const body = document.body;
@@ -28,6 +29,20 @@
         }
 
         window.onload = applyDarkMode;
+
+        // Função para mostrar/ocultar o 4º card
+        function showMoreCards() {
+            const moreCard = document.getElementById('card-4');
+            const showMoreBtn = document.getElementById('show-more-btn');
+
+            if (moreCard.style.display === 'none') {
+                moreCard.style.display = 'block';
+                showMoreBtn.innerText = 'Mostrar Menos';
+            } else {
+                moreCard.style.display = 'none';
+                showMoreBtn.innerText = 'Mostrar Mais';
+            }
+        }
     </script>
 </head>
 <body>
@@ -63,11 +78,41 @@
                 <p>Conheça mais sobre a história de nossa comunidade!</p>
             </div>
         </section>
-
+    
+        <section class="cards-section">
+            <h2>Últimas Notícias</h2>
+            <div class="cards-container" id="cards-container">
+                <!-- Exemplo de 3 cards com imagem -->
+                <div class="card" onclick="window.location.href='noticia1.html'">
+                    <img src="./são jose.jpg" alt="Imagem Notícia 1" class="card-img">
+                    <h3>NATAL – 1: PREPAREMOS O NATAL</h3>
+                    <p>Natal significa que Jesus, o Filho de Deus, nasceu... <span class="read-more">Leia mais...</span></p>
+                </div>
+                <div class="card" onclick="window.location.href='noticia2.html'">
+                    <img src="./Santa-Teresa-de-Jesus-Reformadora-do-Carmelo.jpg" alt="Imagem Notícia 2" class="card-img">
+                    <h3>4º morada</h3>
+                    <p>Para começar a falar das quartas moradas, bem necessário é... <span class="read-more">Leia mais...</span></p>
+                </div>
+                <div class="card" onclick="window.location.href='noticia3.html'">
+                    <img src="./formacao_o-sentido-da-vida-segundo-santa-teresinha-do-menino-jesus.jpg" alt="Imagem Notícia 3" class="card-img">
+                    <h3>HISTÓRIA DE UMA ALMA</h3>
+                    <p>A vós, querida Madre, que sois duplamente minha mãe...<span class="read-more">Leia mais...</span></p>
+                </div>
+                
+                <!-- 4º card escondido inicialmente -->
+                <div class="card" id="card-4" onclick="window.location.href='noticia4.html'">
+                    <img src="./formacao_o-sentido-da-vida-segundo-santa-teresinha-do-menino-jesus.jpg" alt="Imagem Notícia 4" class="card-img">
+                    <h3>HISTÓRIA DE UMA ALMA</h3>
+                    <p>A vós, querida Madre, que sois duplamente minha mãe...<span class="read-more">Leia mais...</span></p>
+                </div>
+            </div>
+            <button id="show-more-btn" onclick="showMoreCards()">Mostrar Mais</button>
+        </section>
+    
         <footer>
             <p>&copy; 2024 Paróquia Nossa Senhora. Todos os direitos reservados.</p>
         </footer>
-
+    
         <a href="https://wa.me/+5522999696580" class="whatsapp-button" target="_blank" rel="noopener noreferrer">
             <div class="whatsapp-bubble">
                 <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp Logo" class="whatsapp-logo">

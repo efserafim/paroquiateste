@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paróquia - Natal</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="index-cards.css">
+    <script>
+        function applyDarkMode() {
+            const body = document.body;
+            const darkModeEnabled = localStorage.getItem('dark-mode') === 'true';
+            if (darkModeEnabled) {
+                body.classList.add('dark-mode');
+                document.getElementById('mode-icon').innerHTML = '🌙'; // Lua
+                document.getElementById('mode-text').innerText = 'Modo Claro';
+            } else {
+                body.classList.remove('dark-mode');
+                document.getElementById('mode-icon').innerHTML = '☀️'; // Sol
+                document.getElementById('mode-text').innerText = 'Modo Escuro';
+            }
+        }
+
+        function toggleDarkMode() {
+            const body = document.body;
+            const darkModeEnabled = body.classList.toggle('dark-mode');
+            localStorage.setItem('dark-mode', darkModeEnabled);
+            applyDarkMode();
+        }
+
+        window.onload = applyDarkMode;
+    </script>
+    <style>
+        /* Estilização do texto da seção de Natal */
+        .natal-text {
+            padding: 20px;
+            font-family: 'Georgia', serif;
+            color: #333;
+            line-height: 1.8;
+        }
+
+        .natal-text h2 {
+            font-size: 2.5em;
+            text-align: center;
+            color: #2a9df4;
+            margin-bottom: 15px;
+        }
+
+        .natal-text p {
+            font-size: 1.2em;
+            color: #555;
+            margin-bottom: 15px;
+            text-align: justify;
+            text-indent: 1.5em;
+        }
+
+        .natal-text .highlight {
+            font-weight: bold;
+            color: #e53935;
+        }
+
+        .natal-text blockquote {
+            font-size: 1.3em;
+            font-style: italic;
+            color: #444;
+            margin: 30px 0;
+            padding: 20px;
+            background-color: #f4f4f4;
+            border-left: 5px solid #2a9df4;
+        }
+
+        .natal-text .highlight-italic {
+            font-style: italic;
+            color: #e53935;
+        }
+
+        .natal-text .highlight-bold {
+            font-weight: bold;
+            color: #2a9df4;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="mode-toggle">
+            <button onclick="toggleDarkMode()" id="mode-toggle">
+                <span id="mode-icon">☀️</span> 
+            </button>
+        </div>
+        <div class="logo">
+            <img src="./mariano-removebg-preview.png" alt="Brasão" class="brasao">
+            <h1>Paróquia Nossa Senhora de Nazareth</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="historia.html">História</a></li>
+                <li><a href="horarios.html">Missas</a></li>
+                <li><a href="clero.html">Padres</a></li>
+                <li><a href="eventos.html">Pastorais</a></li>
+                <li><a href="leituras.html">Evangelho</a></li>
+                <li><a href="capelas.html">Capelas</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Seção de Natal -->
+        <section class="natal-text">
+            <h2>NATAL – 1: PREPAREMOS O NATAL</h2>
+            <p><strong>22 de novembro de 2016</strong> - PeFaus@1928</p>
+            <p><strong>Natal</strong> significa que Jesus, o Filho de Deus, nasceu, e que, com Ele, se revelou o infinito Amor de Deus pelos homens: "Tanto amou Deus o mundo, que lhe deu seu Filho Unigênito, para que todo o que nele crer não pereça, mas tenha a vida eterna." (João 3:16) – O Verbo se fez carne e habitou entre nós.</p>
+
+            <p>Isto é o Natal. Ao percebermos que muitos ainda não descobriram essa maravilha ou a esqueceram, sentimos a necessidade de nos encaminharmos com fé ao filho de Maria que vai nascer, e de lhe dizer: <span class="highlight">Jesus, no teu aniversário, será que nós vamos deixar-te encostado na sombra, excluído da Festa como se fosses um intruso?</span> Não, não queremos!</p>
+
+            <p>É muito reconfortante ter presente que o Natal não é uma pura recordação, uma simples comemoração histórica. É real, é vivo, está acontecendo em cada ano, quando a liturgia comemora essa solenidade. Veja o que nos ensina o Catecismo da Igreja Católica:</p>
+
+            <blockquote>
+                “Tudo o que Cristo é, tudo o que fez e sofreu por todos os homens, participa da eternidade divina, e assim transcende todos os tempos e em todos se torna presente.”
+            </blockquote>
+
+            <p>No Advento e no Tempo do Natal vamos dizer já as palavras alegres que, na Noite Santa, os pastores dirão enquanto correm para o presépio: <span class="highlight-bold">Vamos até Belém e vejamos o que aconteceu e que o Senhor nos manifestou.</span></p>
+
+            <p>Que Deus nos conceda a graça de <span class="highlight-italic">“ir” e “ver”</span>.</p>
+        </section>
+        
+        <footer>
+            <p>&copy; 2024 Paróquia Nossa Senhora. Todos os direitos reservados.</p>
+        </footer>
+
+        <a href="https://wa.me/+5522999696580" class="whatsapp-button" target="_blank" rel="noopener noreferrer">
+            <div class="whatsapp-bubble">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp Logo" class="whatsapp-logo">
+                Secretaria Online
+            </div>
+        </a>
+    </main>
+</body>
+</html>

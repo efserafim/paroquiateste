@@ -7,29 +7,37 @@
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="leitura.css">
     <script>
-        function applyDarkMode() {
-            const body = document.body;
-            const modeText = document.getElementById('mode-text');
-            if (!modeText) return; // Evita erros se o elemento não existir
+      
+    window.onload = function() {
+        applyDarkMode();  // Garantir que o modo escuro seja aplicado ao carregar a página
+    };
 
-            const darkModeEnabled = localStorage.getItem('dark-mode') === 'true';
-            if (darkModeEnabled) {
-                body.classList.add('dark-mode');
-                document.getElementById('mode-icon').innerHTML = '🌙'; // Lua
-                modeText.innerText = 'Modo Claro';
-            } else {
-                body.classList.remove('dark-mode');
-                document.getElementById('mode-icon').innerHTML = '☀️'; // Sol
-                modeText.innerText = 'Modo Escuro';
-            }
-        }
+    // Função já existente para aplicar o modo escuro
+    function applyDarkMode() {
+        const body = document.body;
+        const modeText = document.getElementById('mode-text');
+        if (!modeText) return;
 
-        function toggleDarkMode() {
-            const body = document.body;
-            const darkModeEnabled = body.classList.toggle('dark-mode');
-            localStorage.setItem('dark-mode', darkModeEnabled);
-            applyDarkMode();
+        const darkModeEnabled = localStorage.getItem('dark-mode') === 'true';
+        if (darkModeEnabled) {
+            body.classList.add('dark-mode');
+            document.getElementById('mode-icon').innerHTML = '🌙'; // Lua
+            modeText.innerText = 'Modo Claro';
+        } else {
+            body.classList.remove('dark-mode');
+            document.getElementById('mode-icon').innerHTML = '☀️'; // Sol
+            modeText.innerText = 'Modo Escuro';
         }
+    }
+
+    // Função para alternar o modo escuro
+    function toggleDarkMode() {
+        const body = document.body;
+        const darkModeEnabled = body.classList.toggle('dark-mode');
+        localStorage.setItem('dark-mode', darkModeEnabled);
+        applyDarkMode();
+    }
+
 
         window.onload = applyDarkMode;
 
